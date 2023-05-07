@@ -19,7 +19,7 @@ if(hamburgers >= 4 && fries >= 1){
 
 let num = 1000;
 
-if(num >= 1000 && num >= 1900){
+if(num >= 1000 && num <= 1900){
     console.log('It`s OK');
 } else {
     console.log('It`s not OK');
@@ -175,18 +175,66 @@ console.log(without);
 //    так щоб в консоль виводився результат обчислень з правильним закінченням.
 //    Наприклад: 1000 метрів це 1 кілометр;  32 метри це 0,032 кілометра і т.д.
 
-let meters = 368200;
-let kilometers;
+// let meters = 368365;
+// let kilometers;
 
-if(meters > 1000){
-    kilometers = meters / 1000;
-    console.log(meters + " метрів це " + kilometers.toFixed(3) + " кілометрів");
-} else if (meters === 1000) {
-    kilometers = meters / 1000;
-    console.log(meters + " метрів це " + kilometers.toFixed(3) + " кілометр");
-} else if(meters < 1000) {
-    kilometers = meters / 1000;
-    console.log(meters + " метрів це " + kilometers.toFixed(3) + " кілометра");
-} else {
-    console.log('Not a number');
-}
+// if(meters > 1000){
+//     kilometers = meters / 1000;
+//     console.log(meters + " метрів це " + kilometers.toFixed(3) + " кілометра(ів)");
+// } else if (meters === 1000) {
+//     kilometers = meters / 1000;
+//     console.log(meters + " метрів це " + kilometers.toFixed(3) + " кілометр");
+// } else if(meters < 1000) {
+//     kilometers = meters / 1000;
+//     console.log(meters + " метрів це " + kilometers.toFixed(3) + " кілометра");
+// } else {
+//     console.log('Not a number');
+// }
+
+// let meters = 2000;
+// let kilometers = meters / 1000;
+
+// if(kilometers % 1 === 0){
+//     console.log(meters + " метрів це " + kilometers.toFixed(3) + " кілометрів");
+// } else if(kilometers % 1 !==0) {
+//     console.log(meters + " метрів це " + kilometers.toFixed(3) + " кілометра");
+// } else if(kilometers === 1000){
+//     console.log(meters + " метрів це " + kilometers.toFixed(3) + " кілометр");
+// }
+
+// let meters = 2002;
+// let kilometers = meters / 1000;
+
+// if(kilometers === 1.000){
+//     console.log(meters + " метрів це " + kilometers.toFixed(3) + " кілометр");
+// } else if (kilometers % 10 === 2 || kilometers % 10 === 3 || kilometers % 10 === 4){
+//     console.log(meters + " метрів це " + kilometers.toFixed(3) + " кілометри");
+// } else if (kilometers % 10 === 5 || kilometers % 10 == 6 || kilometers % 10 === 7 || kilometers % 10 === 8 || kilometers % 10 === 9){
+//     console.log(meters + " метрів це " + kilometers.toFixed(3) + " кілометрів");
+// } else if(kilometers % 1 !==0) {
+//     console.log(meters + " метрів це " + kilometers.toFixed(3) + " кілометра");
+// }
+
+
+let meters = 23565;
+let kilometr = 1000;
+let valueInKilometr = meters / kilometr;
+let lastDigitInMeters =  meters%10;
+let firstWord = '';
+let secondtWord = '';
+
+    if (lastDigitInMeters === 1) {
+         firstWord = ' метр';
+         secondtWord = ' кілометр';
+    }
+    else if(lastDigitInMeters === 2 || lastDigitInMeters === 3 || lastDigitInMeters === 4) {
+         firstWord = ' метра';
+         secondtWord = ' кілометри';
+    }
+    else if (lastDigitInMeters === 5 || lastDigitInMeters === 6 || lastDigitInMeters === 7 || lastDigitInMeters === 8 || lastDigitInMeters === 9){
+         firstWord = ' метрів';
+         secondtWord = ' кілометрів';
+    } 
+
+    let result =  meters +  firstWord + ' це ' + valueInKilometr.toFixed(3) + secondtWord
+    console.log(result);
